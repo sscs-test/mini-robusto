@@ -1,0 +1,4 @@
+in-toto==3.0.0
+#cryptography==42.0.7
+-r python-tuf/requirements/pinned.txt
+-e python-tuf/

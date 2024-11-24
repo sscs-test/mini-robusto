@@ -1,0 +1,46 @@
+{
+ "signatures": [
+  {
+   "keyid": "c69c1e044f98357658f53c3ffeda3743480bb96930bc294b8b3ec20ede9c3ff8",
+   "sig": "30460221009efdcd15bee487507886eca8b872ae98929dc2e53b53c51b49e953bf4b031208022100a19a6e90ac9271263a3cc057b7d0fac380f96ba7349a5a45eb5e1089ad8e6e92"
+  }
+ ],
+ "signed": {
+  "_type": "targets",
+  "expires": "2024-12-01T08:07:03Z",
+  "spec_version": "1.0.31",
+  "targets": {
+   "final_product/clone.210dcc50.link": {
+    "hashes": {
+     "sha256": "aa5ad421573205641fcfebbb38179de4b1f62a0253a6b5bfdd7b730a3c3c6809"
+    },
+    "length": 1116
+   },
+   "final_product/demo-project.tar.gz": {
+    "hashes": {
+     "sha256": "49bb89890c39d1cfc382c49cba2eab47b21c65809038a524b3996bbd16ea92c2"
+    },
+    "length": 205
+   },
+   "final_product/package.be06db20.link": {
+    "hashes": {
+     "sha256": "16678db799cffc783987fcd8e3cfb63906415e9f733828cc06174d99b8510b2a"
+    },
+    "length": 1272
+   },
+   "final_product/untar.link": {
+    "hashes": {
+     "sha256": "4e5fee5c7de187b03900d5cf7e1180e50c108eb61a3bc6cdfc6b0aff35b858da"
+    },
+    "length": 1251
+   },
+   "final_product/update-version.210dcc50.link": {
+    "hashes": {
+     "sha256": "126026ac2bf9a88a994b37019d34153f7320969022f19e17f9e1d6951f5d3c11"
+    },
+    "length": 1120
+   }
+  },
+  "version": 1
+ }
+}

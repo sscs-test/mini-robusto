@@ -1,0 +1,83 @@
+{
+ "signatures": [
+  {
+   "keyid": "beaeb84a2a45d28ddab7ab4c691531a8efdb1d67b95b82181704f93b93641a2a",
+   "sig": "304502206403bee876110b5f3964d4a8d1c690466aa87a1ce70d4c8c6c9d7882db1608f4022100b15efc0086b227e595a42f70f0d215a06c6d3195f7b9a2361f8d209ced407ddb"
+  },
+  {
+   "keyid": "7277ff6e5e5fcef9e282423e0e7b220217358f6507613e5401780020355b3fb3",
+   "sig": "3046022100809e809f9a94151a8b78cf0687729970153837bb7cea9aea104abdb1da0fad81022100fdb0246930103a0c4e23e40041d74a282726d9ad6249123b475e259af36f2371"
+  }
+ ],
+ "signed": {
+  "_type": "root",
+  "consistent_snapshot": true,
+  "expires": "2025-11-24T06:57:29Z",
+  "keys": {
+   "5e8d5e57d45456f7cc6533791600a4d529c874c143ff306f02e972d2abbbe0e5": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFVcqXmXNG0y/1v9YE9c15ddnVt3D\nd9jaEpaxB7obPsKqoiHzJwGPOOrCf6egnIg5aflSQOLeVg0R/kR+UFI+hQ==\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp256"
+   },
+   "7277ff6e5e5fcef9e282423e0e7b220217358f6507613e5401780020355b3fb3": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVfvx5LwTE+rtBwa5/XRDCrWFrYwd\na7O9JR5cHkLCCOHvMjgS9hD7MDqp37U9qgyGMFl6/OROERlgNTBt5PA/DA==\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp256"
+   },
+   "75e6f351facbb8c048fe6662ba26f6f53add763c5f132fa4dd0ba9f1fc8bee72": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEu5Nsk/Vd+uttiZMa5llvVYOw+KdH\nWCazRCVurRfkEajHBxRznhMoxFA5+f4HnA7x2qZpMIVpd8Jd0lXJgqSZ5Q==\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp256"
+   },
+   "beaeb84a2a45d28ddab7ab4c691531a8efdb1d67b95b82181704f93b93641a2a": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAECEjtCfR7k6NSs06EdJ8rqVkza7Fg\nUr46lTZaJ6fmDaEvrtK5agz296sDIBrnp0IZo/o6EkA//QQW8Om/7yp4NQ==\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp256"
+   },
+   "cb3a8c84996182509abef439a06c00556c0e9f940948715453c02e998ab480e3": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAERWE8JI/eTLEq9/wRFwmvrHV3g4Kx\nkxDpJa1/JCtFHcndnTztoaQNKUSpgKmaLC0t8yOzP3PNANutdMB3wBT3DQ==\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp256"
+   }
+  },
+  "roles": {
+   "root": {
+    "keyids": [
+     "beaeb84a2a45d28ddab7ab4c691531a8efdb1d67b95b82181704f93b93641a2a",
+     "7277ff6e5e5fcef9e282423e0e7b220217358f6507613e5401780020355b3fb3"
+    ],
+    "threshold": 2
+   },
+   "snapshot": {
+    "keyids": [
+     "5e8d5e57d45456f7cc6533791600a4d529c874c143ff306f02e972d2abbbe0e5"
+    ],
+    "threshold": 1
+   },
+   "targets": {
+    "keyids": [
+     "75e6f351facbb8c048fe6662ba26f6f53add763c5f132fa4dd0ba9f1fc8bee72"
+    ],
+    "threshold": 1
+   },
+   "timestamp": {
+    "keyids": [
+     "cb3a8c84996182509abef439a06c00556c0e9f940948715453c02e998ab480e3"
+    ],
+    "threshold": 1
+   }
+  },
+  "spec_version": "1.0.31",
+  "version": 1
+ }
+}
