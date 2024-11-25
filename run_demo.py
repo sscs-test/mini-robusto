@@ -86,11 +86,11 @@ def supply_chain():
   copyfile("functionary_bob/update-version.210dcc50.link", "final_product/update-version.210dcc50.link")
   copyfile("functionary_carl/package.be06db20.link", "final_product/package.be06db20.link")
   copyfile("functionary_carl/demo-project.tar.gz", "final_product/demo-project.tar.gz")
+  copyfile("owner_alice/alice.pub", "final_product/alice.pub")
 
 
   prompt_key("Verify final product (client)")
   os.chdir("final_product")
-  copyfile("../owner_alice/alice.pub", "alice.pub")
   verify_cmd = ("in-toto-verify"
                 " --verbose"
                 " --layout root.layout"

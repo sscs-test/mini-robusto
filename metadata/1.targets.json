@@ -1,0 +1,28 @@
+{
+ "signatures": [
+  {
+   "keyid": "add4efb78fb46b277f019e60980ec3c5c269120bca2ca5d940c80a8012d17847",
+   "sig": "3046022100a30c3daaa607dca1071994045449eb134c77352c8aaa8aae3127fe00e576bc4e022100d51419f660fa13d45fd96e8ef1efe6cb8348a99662a668a3e968535f22364e62"
+  }
+ ],
+ "signed": {
+  "_type": "targets",
+  "expires": "2024-12-02T22:24:20Z",
+  "spec_version": "1.0.31",
+  "targets": {
+   "alice.pub": {
+    "hashes": {
+     "sha256": "54d66a3cda423bb31027f388ffb6753a37e7bd5d9d883140fb818dac73456695"
+    },
+    "length": 625
+   },
+   "root.layout": {
+    "hashes": {
+     "sha256": "702f248a1b636f039aac61a5f919615535f606da94fe7e028f4a13164381b409"
+    },
+    "length": 5340
+   }
+  },
+  "version": 1
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "signatures": [
+  {
+   "keyid": "add4efb78fb46b277f019e60980ec3c5c269120bca2ca5d940c80a8012d17847",
+   "sig": "30450221008e6639394739c03fff450bbc3403b341dea9cd860bfcf6f8ea045b4d9f678e8402203d7287d00dd9dd5a4c35ab5bbeb3ad023d6258f12414b462ddae6f7b524a10e5"
+  }
+ ],
+ "signed": {
+  "_type": "targets",
+  "delegations": {
+   "keys": {
+    "e0021574d28421e3975013e5a6e6408f9b0da72cd62098192e886a7c5ef0b4f6": {
+     "keytype": "ecdsa",
+     "keyval": {
+      "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEL4PCuz1JFH8QLiD/Wn72i0ZS8ItR\nY7FotD0PDRo+UM0Kojzq3+fpyXlYL9xBMkkp2r7OSF3R+b7smGw16kaZ2w==\n-----END PUBLIC KEY-----\n"
+     },
+     "scheme": "ecdsa-sha2-nistp256"
+    }
+   },
+   "roles": [
+    {
+     "keyids": [
+      "e0021574d28421e3975013e5a6e6408f9b0da72cd62098192e886a7c5ef0b4f6"
+     ],
+     "name": "packages-and-in-toto-metadata-signer",
+     "paths": [
+      "*.link",
+      "*.tar.gz"
+     ],
+     "terminating": true,
+     "threshold": 1
+    }
+   ]
+  },
+  "expires": "2025-11-25T22:24:20Z",
+  "spec_version": "1.0.31",
+  "targets": {
+   "alice.pub": {
+    "hashes": {
+     "sha256": "54d66a3cda423bb31027f388ffb6753a37e7bd5d9d883140fb818dac73456695"
+    },
+    "length": 625
+   },
+   "root.layout": {
+    "hashes": {
+     "sha256": "702f248a1b636f039aac61a5f919615535f606da94fe7e028f4a13164381b409"
+    },
+    "length": 5340
+   }
+  },
+  "version": 2
+ }
+}

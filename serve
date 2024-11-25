@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+import os
+import shutil
+import hashlib
+
+SRC = "final_product"
+DEST = "targets"
+
+if os.path.exists(DEST):
+    shutil.rmtree(DEST)
+
+# copy the final_product directory to the targets directory
+
+shutil.copytree(SRC, DEST)
+
+# Change the names of the files in DEST directory to <sha256hash>.<filename>
+
+for filename in os.listdir(DEST):
+    if filename == "targets":
+        continue
+    with open(os.path.join(DEST, filename), "rb") as f:
+        content = f.read()
+    sha256hash = hashlib.sha256(content).hexdigest()
+    new_filename = sha256hash + "." + filename
+    os.rename(os.path.join(DEST, filename), os.path.join(DEST, new_filename))
+
+
+# http serve current dir
+
+os.system("python3 -m http.server 8000")

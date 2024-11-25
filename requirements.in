@@ -1,0 +1,5 @@
+in-toto
+cryptography #required for in-toto demo (layout creation)
+tuf
+# securesystemslib[crypto]==1.1.0 #requried for tuf and in-toto demo
+# -e python-tuf/

@@ -274,3 +274,5 @@ distributed using TUF.
 
 From what I understood TUF is from package repository to consumer. Who generates
 the TUF metadata in current real world scenario.
+
+Fix the requirements.txt in in-toto demo upstream

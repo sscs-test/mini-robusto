@@ -108,14 +108,16 @@ roles["targets"] = Metadata(Targets(expires=_in(7)))
 # e.g. tuf-examples.org/artifacts/manual_repo/basic_repo.py
 
 base_path = Path(__file__).resolve().cwd()
-alice_pub_target = "final_product/alice.pub"
-layout_target = "final_product/root.layout"
+alice_pub_target = "alice.pub"
+layout_target = "root.layout"
 
-target_file_info = TargetFile.from_file(alice_pub_target, str(base_path) +"/" +
+target_file_info = TargetFile.from_file(alice_pub_target, str(base_path)
+                                        +"/final_product/" +
                                         alice_pub_target)
 roles["targets"].signed.targets[alice_pub_target] = target_file_info
 
-target_file_info = TargetFile.from_file(layout_target, str(base_path) + "/" +
+target_file_info = TargetFile.from_file(layout_target, str(base_path) +
+                                        "/final_product/" +
                                         layout_target)
 roles["targets"].signed.targets[layout_target] = target_file_info
 
@@ -216,15 +218,20 @@ for name in ["targets", "snapshot", "timestamp", "root"]:
 # this demo we use a non-compact JSON format and store all metadata in
 # temporary directory at CWD for review.
 PRETTY = JSONSerializer(compact=False)
-TMP_DIR = tempfile.mkdtemp(dir=os.getcwd())
+# TMP_DIR = tempfile.mkdtemp(dir=os.getcwd())
+REPO_DIR = os.getcwd()
+TARGETS_DIR = REPO_DIR + "/final_product"
+METADATA_DIR = REPO_DIR + "/metadata"
+if not os.path.exists(METADATA_DIR):
+    os.makedirs(METADATA_DIR)
 
 for name in ["root", "targets", "snapshot"]:
     filename = f"{roles[name].signed.version}.{roles[name].signed.type}.json"
-    path = os.path.join(TMP_DIR, filename)
+    path = os.path.join(METADATA_DIR, filename)
     roles[name].to_file(path, serializer=PRETTY)
 
 roles["timestamp"].to_file(
-    os.path.join(TMP_DIR, "timestamp.json"), serializer=PRETTY
+    os.path.join(METADATA_DIR, "timestamp.json"), serializer=PRETTY
 )
 
 
@@ -236,7 +243,7 @@ roles["timestamp"].to_file(
 # # on that key owner's computer. All the owner has to do is read the metadata
 # # file, sign it, and write it back to the same file, and this can be repeated
 # # until the threshold is satisfied.
-# root_path = os.path.join(TMP_DIR, "1.root.json")
+# root_path = os.path.join(METADATA_DIR, "1.root.json")
 # root = Metadata.from_file(root_path)
 # root.sign(another_root_signer, append=True)
 # root.to_file(root_path, serializer=PRETTY)
@@ -259,17 +266,16 @@ signers[delegatee_name] = timestamp_snapshot_key
 # ---------
 # Create a new targets role, akin to how we created top-level targets above, and
 # add target file info from above according to the delegatee's responsibility.
-
-TARGET_DIR = os.getcwd()
 PKG = "demo-project.tar.gz"
+
 # Collect target metadata for .link files and the package
 targets_metadata = {}
-for root, _, files in os.walk(TARGET_DIR + "/final_product"):
+for root, _, files in os.walk(TARGETS_DIR):
     for file_name in files:
         # Include only *.link files or the specific .tar.gz file
         if file_name.endswith(".link") or file_name == PKG:
             file_path = os.path.join(root, file_name)
-            relative_path = os.path.relpath(file_path, TARGET_DIR)
+            relative_path = os.path.relpath(file_path, TARGETS_DIR)
 
             # Add file metadata
             targets_metadata[relative_path] = TargetFile.from_file(relative_path, file_path)
@@ -304,7 +310,8 @@ roles["targets"].signed.delegations = Delegations(
             keyids=[delegatee_key.keyid],
             threshold=1,
             terminating=True,
-            paths=["final_product/*.link", "final_product/*.tar.gz"],
+            #paths=["final_product/*.link", "final_product/*.tar.gz"],
+            paths=["*.link", "*.tar.gz"],
         ),
     },
 )
@@ -348,7 +355,7 @@ for role_name in ["targets", "packages-and-in-toto-metadata-signer", "snapshot",
     if role_name != "timestamp":
         filename = f"{roles[role_name].signed.version}.{filename}"
 
-    roles[role_name].to_file(os.path.join(TMP_DIR, filename), serializer=PRETTY)
+    roles[role_name].to_file(os.path.join(METADATA_DIR, filename), serializer=PRETTY)
 
 
 # # Root key rotation (recover from a compromise / key loss)
@@ -375,6 +382,6 @@ for role_name in ["targets", "packages-and-in-toto-metadata-signer", "snapshot",
 #     roles["root"].sign(signer, append=True)
 #
 # roles["root"].to_file(
-#     os.path.join(TMP_DIR, f"{roles['root'].signed.version}.root.json"),
+#     os.path.join(METADATA_DIR, f"{roles['root'].signed.version}.root.json"),
 #     serializer=PRETTY,
 # )
